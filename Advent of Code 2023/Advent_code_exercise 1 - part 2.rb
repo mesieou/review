@@ -102,7 +102,6 @@ Game 100: 8 red, 13 green; 5 red, 4 green; 7 blue, 3 red, 8 green; 13 blue, 6 gr
 highest_greens = []
 highest_reds = []
 highest_blues = []
-possible_games = (1..100).to_a
 
 array = text.split("\n")
 game_and_sets_array = array.map { |game| game.split(":") }
@@ -122,7 +121,7 @@ game_and_sets_array.each_with_index do |game, index|
 end
 
 def group_by_highest_value(hash)
-  hash.group_by { |hash| hash.keys.first}
+  hash.group_by { |hash| hash.keys.first }
       .transform_values { |hashes| hashes.max_by { |hash| hash.values.first } }
 end
 result = 0
@@ -134,9 +133,3 @@ result = 0
   result += (blue_values * green_values * red_values)
 end
 p result
-
-
-# result = possible_games.reject { |number| highest_greens.uniq.include?(number) }
-#                        .reduce(0) { |acc, num| acc + num }
-
-# p result
