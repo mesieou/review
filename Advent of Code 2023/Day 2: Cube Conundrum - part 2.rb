@@ -1,3 +1,5 @@
+require "pry-byebug"
+
 text = "Game 1: 7 green, 4 blue, 3 red; 4 blue, 10 red, 1 green; 1 blue, 9 red
 Game 2: 2 red, 4 blue, 3 green; 5 green, 3 red, 1 blue; 3 green, 5 blue, 3 red
 Game 3: 12 red, 1 blue; 6 red, 2 green, 3 blue; 2 blue, 5 red, 3 green
@@ -119,7 +121,7 @@ game_and_sets_array.each_with_index do |game, index|
     end
   end
 end
-
+binding.pry
 def group_by_highest_value(hash)
   hash.group_by { |hash| hash.keys.first }
       .transform_values { |hashes| hashes.max_by { |hash| hash.values.first } }
