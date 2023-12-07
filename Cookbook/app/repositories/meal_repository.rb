@@ -1,8 +1,8 @@
+# Represents a repository for managing Meal objects and persisting them to a CSV file.
 require 'csv'
 require_relative '../models/meal.rb'
 
 class MealRepository
-
   def initialize(csv_file)
     @csv_file = csv_file
     @meals = []
