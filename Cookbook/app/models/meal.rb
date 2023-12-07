@@ -8,5 +8,3 @@ class Meal
     @price = attributes[:price]
   end
 end
-
-# p burger = Meal.new(id: 12, name: "Cheese burger", price: 235.8)
