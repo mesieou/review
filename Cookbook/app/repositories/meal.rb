@@ -11,7 +11,7 @@ class MealRepository
   end
 
   def create(meal)
-    meal.id = @next_id
+    p meal.id = @next_id
     @next_id += 1
     @meals << meal
     save_csv
@@ -23,6 +23,11 @@ class MealRepository
 
   def find(id)
     @meals.find { |meal| meal.id == id }
+  end
+
+  def edit(index, attr_to_edit_index, new_value)
+    instance = find(index)
+    attr_to_edit_index == 1 ? instance.name = new_value : instance.price = new_value.to_f
   end
 
   private
@@ -38,7 +43,7 @@ class MealRepository
 
   def load_csv
     CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
-      @meals << Meal.new(id: row[:id].to_f, name: row[:name], price: row[:price].to_i)
+      @meals << Meal.new(id: row[:id].to_i, name: row[:name], price: row[:price].to_f)
     end
     @next_id = @meals.empty? ? 1 : @meals.last.id + 1
   end

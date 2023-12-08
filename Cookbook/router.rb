@@ -21,18 +21,20 @@ class Router
     puts 'What would you like to do?'
     puts '1 - Add a new meal'
     puts '2 - See all meals'
-    puts '3 - Add a new customer'
-    puts '4 - See all customers'
-    puts '5 - Exit'
+    puts '3 - Edit a meal'
+    puts '4 - Add a new customer'
+    puts '5 - See all customers'
+    puts '6 - Exit'
   end
 
   def route_action(user_action)
     case user_action
     when 1 then @meal_controller.add
     when 2 then @meal_controller.list
-    when 3 then @customer_controller.add
-    when 4 then @customer_controller.list
-    when 5 then stop
+    when 3 then @meal_controller.edit
+    when 4 then @customer_controller.add
+    when 5 then @customer_controller.list
+    when 6 then stop
     end
   end
 
