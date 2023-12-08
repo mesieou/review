@@ -1,6 +1,6 @@
 require_relative './app/models/meal.rb'
-require_relative './app/repositories/meal_repository.rb'
-require_relative './app/controllers/meal_controller.rb'
+require_relative './app/repositories/meal.rb'
+require_relative './app/controllers/meal.rb'
 require_relative './router.rb'
 
 filepath = File.join(__dir__, 'data/meals.csv')

@@ -1,4 +1,4 @@
-require_relative '../views/meal_view.rb'
+require_relative '../views/meal.rb'
 
 class MealController
   def initialize(repo)
