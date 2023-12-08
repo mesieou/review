@@ -24,7 +24,8 @@ class Router
     puts '3 - Edit a meal'
     puts '4 - Add a new customer'
     puts '5 - See all customers'
-    puts '6 - Exit'
+    puts '6 - Edit a customer'
+    puts '7 - Exit'
   end
 
   def route_action(user_action)
@@ -34,7 +35,8 @@ class Router
     when 3 then @meal_controller.edit
     when 4 then @customer_controller.add
     when 5 then @customer_controller.list
-    when 6 then stop
+    when 6 then @customer_controller.edit
+    when 7 then stop
     end
   end
 

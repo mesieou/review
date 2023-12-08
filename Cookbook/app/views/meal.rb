@@ -25,10 +25,10 @@ class View
   def ask_for_new_value(attr_to_edit_index)
     puts ''
     if attr_to_edit_index == 1
-      puts 'Type the new name'
+      puts 'Type the new name:'
       gets.chomp
     else
-      puts 'Type the new price'
+      puts 'Type the new price:'
       gets.chomp.to_f
     end
   end

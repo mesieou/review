@@ -17,4 +17,14 @@ class CustomerController
     customer_instances = @customer_repository.all
     @view.display_customers(customer_instances)
   end
+
+  def edit
+    list
+    index = @view.ask_for_customer_index
+    attr_to_edit_index = @view.ask_for_attritube_to_edit
+    new_value = @view.ask_for_new_value(attr_to_edit_index)
+    @customer_repository.edit(index, attr_to_edit_index, new_value)
+    customer_instance = @customer_repository.find(index)
+    @view.confirm_customer_updated(customer_instance)
+  end
 end
