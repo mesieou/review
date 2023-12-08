@@ -3,7 +3,7 @@ class View
     puts 'Meal name:'
     meal_name = gets.chomp
     puts 'Meal price:'
-    meal_price = gets.chomp.to_i
+    meal_price = gets.chomp.to_f
     { name: meal_name, price: meal_price }
   end
 

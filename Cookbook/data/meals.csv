@@ -1,4 +1,6 @@
 id,name,price
-1,sushi,9
-2,Parmagiana,20
-3,chicken pasta,4
+1.0,sushi,9
+2.0,Parmagiana,20
+3.0,chicken pasta,4
+4.0,Arepa,5
+5.0,dasd,2.0
