@@ -26,7 +26,8 @@ class Router
     puts '5 - Add a new customer'
     puts '6 - See all customers'
     puts '7 - Edit a customer'
-    puts '8 - Exit'
+    puts '8 - Delete a customer'
+    puts '9 - Exit'
   end
 
   def route_action(user_action)
@@ -38,7 +39,8 @@ class Router
     when 5 then @customer_controller.add
     when 6 then @customer_controller.list
     when 7 then @customer_controller.edit
-    when 8 then stop
+    when 8 then @customer_controller.destroy
+    when 9 then stop
     end
   end
 

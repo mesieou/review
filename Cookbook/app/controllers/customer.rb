@@ -27,4 +27,11 @@ class CustomerController
     customer_instance = @customer_repository.find(index)
     @view.confirm_customer_updated(customer_instance)
   end
+
+  def destroy
+    list
+    index = @view.ask_for_customer_index_for_deletion
+    @customer_repository.delete(index)
+    @view.confirm_customer_deleted
+  end
 end

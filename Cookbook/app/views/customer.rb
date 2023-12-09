@@ -32,6 +32,12 @@ class CustomerView
     gets.chomp.to_i
   end
 
+  def ask_for_customer_index_for_deletion
+    puts ''
+    puts 'Type the customer number you would like to delete:'
+    gets.chomp.to_i
+  end
+
   # Display messages to customer
   def display_customer(customer_instance)
     puts ''
@@ -56,5 +62,10 @@ class CustomerView
     puts ''
     puts 'Success!. customer updated:'
     display_customer(customer_instance)
+  end
+
+  def confirm_customer_deleted
+    puts ''
+    puts 'Success!. Deleted!'
   end
 end

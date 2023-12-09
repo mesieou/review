@@ -28,6 +28,11 @@ class CustomerRepository
     attr_to_edit_index == 1 ? instance.name = new_value : instance.address = new_value
   end
 
+  def delete(index)
+    @customers.delete_if { |customer| customer.id == index }
+    save_csv
+  end
+
   private
 
   def save_csv
