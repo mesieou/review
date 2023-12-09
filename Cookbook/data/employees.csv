@@ -1,3 +1,4 @@
 id,username,password,role
 2,juan,secret,manager
 3,juan,secret,manager
+4,paola,secret,driver
