@@ -1,5 +1,6 @@
 class Employee
   attr_reader :username, :password, :role
+  attr_accessor :id
 
   def initialize(attributes = {})
     @id = attributes[:id]
@@ -8,6 +9,3 @@ class Employee
     @role = attributes[:role]
   end
 end
-
-juan = Employee.new(id: 1,username: "Juan", password: "secret", role: "manager")
-p juan

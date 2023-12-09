@@ -7,7 +7,7 @@ class BaseRepository
   end
 
   def create(instance)
-    p instance.id = @next_id
+    instance.id = @next_id
     @next_id += 1
     @instances << instance
     save_csv
