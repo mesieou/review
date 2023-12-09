@@ -18,7 +18,13 @@ class View
 
   def ask_for_meal_index
     puts ''
-    puts 'Type the meal number you would like to change'
+    puts 'Type the meal number you would like to change:'
+    gets.chomp.to_i
+  end
+
+  def ask_for_meal_index_for_deletion
+    puts ''
+    puts 'Type the meal number you would like to delete:'
     gets.chomp.to_i
   end
 
@@ -57,5 +63,10 @@ class View
     puts ''
     puts 'Success!. Meal updated:'
     display_meal(meal_instance)
+  end
+
+  def confirm_meal_deleted
+    puts ''
+    puts 'Success!. Deleted!'
   end
 end

@@ -22,10 +22,11 @@ class Router
     puts '1 - Add a new meal'
     puts '2 - See all meals'
     puts '3 - Edit a meal'
-    puts '4 - Add a new customer'
-    puts '5 - See all customers'
-    puts '6 - Edit a customer'
-    puts '7 - Exit'
+    puts '4 - Delete a meal'
+    puts '5 - Add a new customer'
+    puts '6 - See all customers'
+    puts '7 - Edit a customer'
+    puts '8 - Exit'
   end
 
   def route_action(user_action)
@@ -33,10 +34,11 @@ class Router
     when 1 then @meal_controller.add
     when 2 then @meal_controller.list
     when 3 then @meal_controller.edit
-    when 4 then @customer_controller.add
-    when 5 then @customer_controller.list
-    when 6 then @customer_controller.edit
-    when 7 then stop
+    when 4 then @meal_controller.destroy
+    when 5 then @customer_controller.add
+    when 6 then @customer_controller.list
+    when 7 then @customer_controller.edit
+    when 8 then stop
     end
   end
 

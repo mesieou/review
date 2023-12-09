@@ -30,6 +30,11 @@ class MealRepository
     attr_to_edit_index == 1 ? instance.name = new_value : instance.price = new_value.to_f
   end
 
+  def delete(index)
+    @meals.delete_if { |meal| meal.id == index }
+    save_csv
+  end
+
   private
 
   def save_csv

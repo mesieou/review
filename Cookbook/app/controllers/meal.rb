@@ -27,4 +27,11 @@ class MealController
     meal_instance = @meal_repository.find(index)
     @view.confirm_meal_updated(meal_instance)
   end
+
+  def destroy
+    list
+    index = @view.ask_for_meal_index_for_deletion
+    @meal_repository.delete(index)
+    @view.confirm_meal_deleted
+  end
 end
