@@ -28,20 +28,19 @@ sessions_controller = SessionsController.new(employee_repository)
 order_repository = OrderRepository.new(orders_filepath, meal_repository, customer_repository, employee_repository)
 
 meal = Meal.new(name: "happymeal", price: 15.50)
-customer = Customer.new(name: "Santiago Perez", address: "Geelong")
-employee = Employee.new(username: "David Santiago", password: "secret", role: "driver")
-order = Order.new(meal: meal, customer: customer, employee: employee, delivered: false)
-
 meal_repository.create(meal)
+
+customer = Customer.new(name: "Santiago Perez", address: "Geelong")
 customer_repository.create(customer)
+
+employee = Employee.new(username: "David Santiago", password: "secret", role: "driver")
 employee_repository.create(employee)
 
+order = Order.new(meal: meal, customer: customer, employee: employee, delivered: false)
 order_repository.create(order)
-p order_repository.all
 
-# puts order.meal.name
-# puts order.customer.address
-# puts order.employee.role
+p order_repository
+
 
 # router = Router.new(meal_controller, customer_controller, sessions_controller)
 

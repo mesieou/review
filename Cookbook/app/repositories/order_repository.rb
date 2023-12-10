@@ -1,12 +1,13 @@
 require_relative '../models/order.rb'
+require_relative '../models/meal.rb'
 class OrderRepository
   def initialize(csv_file, meal_repository, customer_repository, employee_repository)
     @csv_file = csv_file
     @meal_repository = meal_repository
     @customer_repository = customer_repository
     @employee_repository = employee_repository
-    @orders = []
     @next_id = 0
+    @orders = []
     load_csv if File.exist?(@csv_file)
   end
 
@@ -15,7 +16,6 @@ class OrderRepository
     order.id
     @next_id += 1
     @orders << order
-    p @orders.first
     save_csv
   end
 
@@ -26,6 +26,7 @@ class OrderRepository
   def load_csv
     CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
       row[:id] = row[:id].to_i
+      row[:meal] = @meal_repository.find(row[:meal_id].to_i)
       row[:customer] = @customer_repository.find(row[:customer_id].to_i)
       row[:employee] = @employee_repository.find(row[:employee_id].to_i)
       row[:delivered] = row[:delivered] == "true"
