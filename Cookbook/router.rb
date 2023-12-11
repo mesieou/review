@@ -1,8 +1,9 @@
 class Router
-  def initialize(meal_controller, customer_controller, sessions_controller)
+  def initialize(meal_controller, customer_controller, sessions_controller, order_controller)
     @meal_controller = meal_controller
     @customer_controller = customer_controller
     @sessions_controller = sessions_controller
+    @order_controller = order_controller
     @running = true
   end
 
@@ -38,7 +39,9 @@ class Router
     puts '6 - See all customers'
     puts '7 - Edit a customer'
     puts '8 - Delete a customer'
-    puts '9 - Exit'
+    puts '9 - List all orders'
+    puts '10 - Add an order'
+    puts '11 - Exit'
   end
 
   def driver_menu
@@ -61,7 +64,9 @@ class Router
     when 6 then @customer_controller.list
     when 7 then @customer_controller.edit
     when 8 then @customer_controller.destroy
-    when 9 then stop
+    when 9 then @order_controller.list
+    when 10 then @order_controller.add
+    when 11 then stop
     end
   end
 

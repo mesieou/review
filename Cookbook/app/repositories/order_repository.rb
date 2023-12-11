@@ -13,7 +13,6 @@ class OrderRepository
 
   def create(order)
     order.id = @next_id
-    order.id
     @next_id += 1
     @orders << order
     save_csv

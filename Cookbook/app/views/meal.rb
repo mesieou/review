@@ -19,14 +19,14 @@ class View < BaseView
     end
   end
 
-  # Display messages to customer
+  # Display messages
   def display_meal(meal_instance)
     puts ''
     puts "#{meal_instance.id} - Name: #{meal_instance.name}"
-    puts "Address: #{meal_instance.address}\n"
+    puts "Price: #{meal_instance.price}\n"
   end
 
-  def display_meals(meal_instances)
+  def display_all(meal_instances)
     meal_instances.each do |meal_instance|
       display_meal(meal_instance)
     end

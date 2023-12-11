@@ -9,6 +9,7 @@ class BaseView
     puts ''
     puts "Type the #{stuff1} number you would like to #{stuff2}:"
     gets.chomp.to_i
+    puts ''
   end
 
   # Confirmations to customer
@@ -16,16 +17,19 @@ class BaseView
     puts ''
     puts "Success!. #{stuff} created:"
     display_meal(instance)
+    puts ''
   end
 
   def confirm_updated(stuff, instance)
     puts ''
     puts "Success!. #{stuff} updated:"
     display_meal(instance)
+    puts ''
   end
 
   def confirm_deleted
     puts ''
     puts 'Success!. Deleted!'
+    puts ''
   end
 end

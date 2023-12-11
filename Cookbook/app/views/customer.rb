@@ -26,7 +26,7 @@ class CustomerView < BaseView
     puts "Address: #{customer_instance.address}\n"
   end
 
-  def display_customers(customer_instances)
+  def display_all(customer_instances)
     customer_instances.each do |customer_instance|
       display_customer(customer_instance)
     end
