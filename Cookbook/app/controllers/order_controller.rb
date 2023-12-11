@@ -14,7 +14,7 @@ class OrderController
   def add
     meals = @meal_repository.all
     @meal_view.display_all(meals)
-    meal_index = @meal_view.ask_for_index(:meal, :add)
+    p meal_index = @meal_view.ask_for_index(:meal, :add)
     meal_instance = @meal_repository.find(meal_index)
 
     customers = @customer_repository.all

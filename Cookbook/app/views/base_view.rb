@@ -8,8 +8,9 @@ class BaseView
   def ask_for_index(stuff1, stuff2)
     puts ''
     puts "Type the #{stuff1} number you would like to #{stuff2}:"
-    gets.chomp.to_i
+    result = gets.chomp.to_i
     puts ''
+    result
   end
 
   # Confirmations to customer

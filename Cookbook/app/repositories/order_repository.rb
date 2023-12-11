@@ -53,7 +53,7 @@ class OrderRepository
     CSV.open(@csv_file, "wb") do |csv|
       csv << ["id", "meal_id", "customer_id", "employee_id", "delivered"]
       @orders.each do |order|
-        csv << [order.id, order.meal.id, order.customer.id, order.employee.id]
+        csv << [order.id, order.meal.id, order.customer.id, order.employee.id, order.delivered]
       end
     end
   end
