@@ -7,10 +7,11 @@ class CustomerController
   end
 
   def add
-    customer_hash = @view.ask_for_customer_details
-    customer_instance = Customer.new(customer_hash)
+    name = ask_for(:name)
+    address = ask_for(:address)
+    customer_instance = Customer.new(name: name, address: address)
     @customer_repository.create(customer_instance)
-    @view.confirm_customer_created(customer_instance)
+    @view.confirm_created(:customer, customer_instance)
   end
 
   def list
@@ -20,18 +21,18 @@ class CustomerController
 
   def edit
     list
-    index = @view.ask_for_customer_index
+    index = @view.ask_for_index(:customer, :create)
     attr_to_edit_index = @view.ask_for_attritube_to_edit
     new_value = @view.ask_for_new_value(attr_to_edit_index)
     @customer_repository.edit(index, attr_to_edit_index, new_value)
     customer_instance = @customer_repository.find(index)
-    @view.confirm_customer_updated(customer_instance)
+    @view.confirm_updated(:customer, customer_instance)
   end
 
   def destroy
     list
-    index = @view.ask_for_customer_index_for_deletion
+    index = @view.ask_for_index(:customer, :delete)
     @customer_repository.delete(index)
-    @view.confirm_customer_deleted
+    @view.confirm_deleted
   end
 end

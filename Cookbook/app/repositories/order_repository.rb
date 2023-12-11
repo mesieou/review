@@ -19,9 +19,24 @@ class OrderRepository
     save_csv
   end
 
-  def all
-    @instances
+  def find(id)
+    @orders.find { |order| order.id == id }
   end
+
+  def delete(index)
+    @orders.delete_if { |order| order.id == index }
+    save_csv
+  end
+
+  def all
+    @orders
+  end
+
+  def all_undelivered
+    @orders.find { |order| order.delivered == false  }
+  end
+
+  private
 
   def load_csv
     CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
