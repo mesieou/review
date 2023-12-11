@@ -20,15 +20,15 @@ class View < BaseView
   end
 
   # Display messages
-  def display_instance(meal_instance)
+  def display_instance(meal_instance, index)
     puts ''
-    puts "#{meal_instance.id} - Name: #{meal_instance.name}"
+    puts "#{index + 1} - Name: #{meal_instance.name}"
     puts "Price: #{meal_instance.price}\n"
   end
 
   def display_all(meal_instances)
-    meal_instances.each do |meal_instance|
-      display_instance(meal_instance)
+    meal_instances.each_with_index do |meal_instance, index|
+      display_instance(meal_instance, index)
     end
   end
 end

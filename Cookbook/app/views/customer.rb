@@ -20,15 +20,15 @@ class CustomerView < BaseView
   end
 
   # Display messages to customer
-  def display_instance(customer_instance)
+  def display_instance(customer_instance, index)
     puts ''
-    puts "#{customer_instance.id} - Name: #{customer_instance.name}"
+    puts "#{index + 1} - Name: #{customer_instance.name}"
     puts "Address: #{customer_instance.address}\n"
   end
 
   def display_all(customer_instances)
-    customer_instances.each do |customer_instance|
-      display_instance(customer_instance)
+    customer_instances.each_with_index do |customer_instance, index|
+      display_instance(customer_instance, index)
     end
   end
 end

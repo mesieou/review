@@ -9,15 +9,15 @@ class EmployeeView < BaseView
   end
 
   # Display messages to customer
-  def display_instance(employee_instance)
+  def display_instance(employee_instance, index)
     puts ''
-    puts "#{employee_instance.id} - Name: #{employee_instance.username}"
+    puts "#{index + 1} - Name: #{employee_instance.username}"
     puts "Role: #{employee_instance.role}\n"
   end
 
   def display_all(employee_instances)
-    employee_instances.each do |employee_instance|
-      display_instance(employee_instance)
+    employee_instances.each_with_index do |employee_instance, index|
+      display_instance(employee_instance, index)
     end
   end
 end

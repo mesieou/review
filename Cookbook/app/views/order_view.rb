@@ -1,9 +1,9 @@
 require_relative './base_view.rb'
 class OrderView < BaseView
   # Display messages to customer
-  def display_instance(order_instance)
+  def display_instance(order_instance, index)
     puts ''
-    puts "#{order_instance.id} - Meal: #{order_instance.meal.name}"
+    puts "#{index + 1} - Meal: #{order_instance.meal.name}"
     puts "Price: #{order_instance.meal.price}\n"
     puts "Customer: #{order_instance.customer.name}\n"
     puts "Address: #{order_instance.customer.address}\n"
@@ -12,8 +12,8 @@ class OrderView < BaseView
   end
 
   def display_all(order_instances)
-    order_instances.each do |order_instance|
-      display_instance(order_instance)
+    order_instances.each_with_index do |order_instance, index|
+      display_instance(order_instance, index)
     end
   end
 
