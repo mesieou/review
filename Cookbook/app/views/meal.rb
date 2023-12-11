@@ -20,7 +20,7 @@ class View < BaseView
   end
 
   # Display messages
-  def display_meal(meal_instance)
+  def display_instance(meal_instance)
     puts ''
     puts "#{meal_instance.id} - Name: #{meal_instance.name}"
     puts "Price: #{meal_instance.price}\n"
@@ -28,7 +28,7 @@ class View < BaseView
 
   def display_all(meal_instances)
     meal_instances.each do |meal_instance|
-      display_meal(meal_instance)
+      display_instance(meal_instance)
     end
   end
 end

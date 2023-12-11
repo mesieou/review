@@ -7,8 +7,8 @@ class MealController
   end
 
   def add
-    name = ask_for(:name)
-    price = ask_for(:price)
+    name = @view.ask_for(:name)
+    price = @view.ask_for(:price)
     meal_instance = Meal.new(name: name, price: price)
     @meal_repository.create(meal_instance)
     @view.confirm_created(:meal, meal_instance)
@@ -16,7 +16,7 @@ class MealController
 
   def list
     meal_instances = @meal_repository.all
-    @view.display_meals(meal_instances)
+    @view.display_all(meal_instances)
   end
 
   def edit

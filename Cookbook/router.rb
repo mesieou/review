@@ -39,7 +39,7 @@ class Router
     puts '6 - See all customers'
     puts '7 - Edit a customer'
     puts '8 - Delete a customer'
-    puts '9 - List all orders'
+    puts '9 - List all undelivered orders'
     puts '10 - Add an order'
     puts '11 - Exit'
   end
@@ -51,7 +51,9 @@ class Router
     puts '2 - See all meals'
     puts '3 - Edit a meal'
     puts '4 - Delete a meal'
-    puts '5 - Exit'
+    puts '5 - List my orders'
+    puts '6 - Mark an order as completed'
+    puts '7 - Exit'
   end
 
   def manager_action(user_action)
@@ -64,7 +66,7 @@ class Router
     when 6 then @customer_controller.list
     when 7 then @customer_controller.edit
     when 8 then @customer_controller.destroy
-    when 9 then @order_controller.list
+    when 9 then @order_controller.list_undelivered_orders
     when 10 then @order_controller.add
     when 11 then stop
     end
@@ -76,7 +78,9 @@ class Router
     when 2 then @meal_controller.list
     when 3 then @meal_controller.edit
     when 4 then @meal_controller.destroy
-    when 5 then stop
+    when 5 then @order_controller.list
+    when 6 then @order_controller.mark_as_delivered
+    when 7 then stop
     end
   end
 

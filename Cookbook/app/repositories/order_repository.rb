@@ -32,7 +32,12 @@ class OrderRepository
   end
 
   def all_undelivered
-    @orders.find { |order| order.delivered == false  }
+    @orders.select { |order| order.delivered == false }
+  end
+
+  def mark_and_save_as_deliverded(order)
+    order.delivered!
+    save_csv
   end
 
   private

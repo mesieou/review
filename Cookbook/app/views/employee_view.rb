@@ -9,7 +9,7 @@ class EmployeeView < BaseView
   end
 
   # Display messages to customer
-  def display_employee(employee_instance)
+  def display_instance(employee_instance)
     puts ''
     puts "#{employee_instance.id} - Name: #{employee_instance.username}"
     puts "Role: #{employee_instance.role}\n"
@@ -17,7 +17,7 @@ class EmployeeView < BaseView
 
   def display_all(employee_instances)
     employee_instances.each do |employee_instance|
-      display_employee(employee_instance)
+      display_instance(employee_instance)
     end
   end
 end

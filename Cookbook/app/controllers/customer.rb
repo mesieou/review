@@ -7,8 +7,8 @@ class CustomerController
   end
 
   def add
-    name = ask_for(:name)
-    address = ask_for(:address)
+    name = @view.ask_for(:name)
+    address = @view.ask_for(:address)
     customer_instance = Customer.new(name: name, address: address)
     @customer_repository.create(customer_instance)
     @view.confirm_created(:customer, customer_instance)
@@ -16,7 +16,7 @@ class CustomerController
 
   def list
     customer_instances = @customer_repository.all
-    @view.display_customers(customer_instances)
+    @view.display_all(customer_instances)
   end
 
   def edit

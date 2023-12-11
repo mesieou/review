@@ -20,7 +20,7 @@ class CustomerView < BaseView
   end
 
   # Display messages to customer
-  def display_customer(customer_instance)
+  def display_instance(customer_instance)
     puts ''
     puts "#{customer_instance.id} - Name: #{customer_instance.name}"
     puts "Address: #{customer_instance.address}\n"
@@ -28,7 +28,7 @@ class CustomerView < BaseView
 
   def display_all(customer_instances)
     customer_instances.each do |customer_instance|
-      display_customer(customer_instance)
+      display_instance(customer_instance)
     end
   end
 end

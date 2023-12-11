@@ -17,14 +17,14 @@ class BaseView
   def confirm_created(stuff, instance)
     puts ''
     puts "Success!. #{stuff} created:"
-    display_meal(instance)
+    display_instance(instance)
     puts ''
   end
 
   def confirm_updated(stuff, instance)
     puts ''
     puts "Success!. #{stuff} updated:"
-    display_meal(instance)
+    display_instance(instance)
     puts ''
   end
 
